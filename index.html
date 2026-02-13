@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>trade offer</title>
+
+<style>
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family: "Courier New", monospace;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#9ec9ff,#ffb7c5);
+    color:#333;
+}
+
+.card{
+    background:#ffffff;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.15);
+    width:380px;
+    text-align:left;
+    transition:0.4s ease;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    letter-spacing:2px;
+    font-size:20px;
+}
+
+p{
+    font-size:14px;
+    margin:8px 0px;
+}
+
+ul{
+    list-style:none;
+    padding:0px;
+    margin:10px 0px 20px 0px;
+}
+
+li{
+    margin:6px 0px;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    padding:12px 0px;
+    border:0px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#6c63ff,#8a84ff);
+    color:#ffffff;
+    font-size:14px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.04);
+    background:linear-gradient(135deg,#554ee8,#6c63ff);
+}
+
+.fade-out{
+    opacity:0;
+    transform:translateY(15px);
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    font-size:12px;
+    opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+    <h2>TRADE OFFER</h2>
+
+    <p><strong>you receive:</strong></p>
+    <ul>
+        <li>• chocolate 🍫</li>
+        <li>• consistency</li>
+        <li>• effort (little)</li>
+        <li>• and sorry from me🥺</li>
+    </ul>
+
+    <p><strong>i receive:</strong></p>
+    <ul>
+        <li>• one smile from you</li>
+        <li>• and one forgive from you</li>
+    </ul>
+
+    <button onclick="acceptTrade()">accept</button>
+</div>
+
+<script>
+function acceptTrade(){
+    const card = document.getElementById("card");
+    card.classList.add("fade-out");
+
+    setTimeout(()=>{
+        card.innerHTML = `
+            <h2>TRADE ACCEPTED.</h2>
+            <p>happy status: high.</p>
+            <p>system stable.</p>
+            <p>no cancellation available.</p>
+            <div class="footer">happy valentine, ceng.</div>
+        `;
+        card.classList.remove("fade-out");
+    },300);
+}
+</script>
+
+</body>
+</html>
